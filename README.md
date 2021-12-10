@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+<h1 align="center">Jokenpô</h1>
+<p align="center">Minigame Jokenpô feito com React</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tabela de conteúdos
+=================
+<!--ts-->
+   * [Sobre](#sobre)
+   * [Estudo](#estudo)
+   * [Pre Requisitos](#pré-requisitos)
+   * [Autor](#autor)
+<!--te-->
 
-## Available Scripts
+### Sobre
 
-In the project directory, you can run:
+Esse é um site que contém um minigame do jokenpô, feito com React. Realizado no ano de 2021.
 
-### `yarn start`
+### Estudo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+No projeto será estudado:
+- Typescript
+- Reactjs
+  - Estados
+  - Uso da biblioteca Styled Components
+  - Arquitetura de projetos Reactjs
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Pré-requisitos
 
-### `yarn test`
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:<br>
+- [Git](https://git-scm.com)<br>
+- [VSCode](https://code.visualstudio.com/) ou algum outro programa para realizar a edição de código.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Cria projeto novo com typescript:
+``yarn create react-app nome-do-projeto --template typescript``
 
-### `yarn build`
+Adiciona modulo para estilização:
+``yarn add styled-components``
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Styles components com typescript:
+``yarn add @types/styled-components``
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<h2 align="center">Autor<h3/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<table align="center">
+  <tr>
+    <td align="center"><a href="https://github.com/jefersoncmn"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/51566081?v=4" width="100px;" alt=""/><br/><sub><b>Jeferson Carlos Martin</b></sub></a><br /><a href="https://github.com/jefersoncmn" title="Jeferson Carlos Martin"></a>
+    </td>
+</table>
+	
+## Meu contato
 
-### `yarn eject`
+:mailbox: [jefersoncmn@hotmail.com](jefersoncmn@hotmail.com)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<div align="justify">
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[<img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/jefcmn/)
+[<img alt="GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/>](https://github.com/jefersoncmn)
+[<img alt="Instagram" src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>](https://www.instagram.com/jefersoncmn/)
+[<img alt="Twitch" src="https://img.shields.io/badge/Twitch-9146FF?style=for-the-badge&logo=twitch&logoColor=white"/>](https://www.twitch.tv/jefcmn)
+[<img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/>](https://www.youtube.com/channel/UCa_rv4hq2RvkDMWHok4hcmw)
+[<img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white"/>](mailto:jefersoncmnn@gmail.com)
+  
