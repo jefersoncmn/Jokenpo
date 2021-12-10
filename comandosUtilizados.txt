@@ -1,0 +1,5 @@
+yarn create react-app nome-do-projeto --template typescript (Cria projeto novo com typescript)
+
+yarn add styled-components (adiciona modulo para estilização)
+
+yarn add @types/styled-components (pra adaptar o styles components com o typescript)

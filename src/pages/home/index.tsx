@@ -1,47 +1,107 @@
-import { Container, Title, SubTitle, Table, Weapon, Text } from './styles';
+import { Container, Title, SubTitle, Table, Weapon, Text, RotatedContainer, Button, AnimatedDivisor } from './styles';
 import weapon from '../../assets/weapon/weapon';
-import { useState } from 'react';
-
-/**
- * Preciso realocar esses enums
- */
-// enum weaponSelected {
-//     none,
-//     rock,
-//     paper,
-//     scissors,
-// }
-
-// enum gameStates {
-//     enemy,
-//     user
-// }
-
-// const IWeapon = {
-//     weapon: String
-// }
+import { useEffect, useState } from 'react';
+import { gameStates } from '../../models/gameStates';
+import { rules } from '../../models/weaponSelected';
 
 export const Home = () => {
 
-    // const [weaponUser, weaponUserSet] = useState<weaponSelected>(weaponSelected.none)
-    const [weaponUser, weaponUserSet] = useState<string>('')
+    const [battleResult, battleResultSet] = useState<string>('Bora lá, é sua vez de jogar!')
 
-    // const [weaponEnemy, weaponEnemySet] = useState<weaponSelected>(weaponSelected.none);
+    const [weaponUser, weaponUserSet] = useState<string[]>([])
 
-    // const [gameState, gameStateSet] = useState<gameStates>(gameStates.user);
+    const [weaponEnemy, weaponEnemySet] = useState<string[]>([]);
 
-    // const selectWeapon = (weapon: weaponSelected) => {
-    //     if (gameState == gameStates.user) {
-    //         console.log('Validado: ', weapon)
-    //         weaponUserSet(weapon);
-    //         gameStateSet(gameStates.enemy);
-    //     }
-    // }
+    const [gameState, gameStateSet] = useState<gameStates>(gameStates.user);
 
-    const validar = (weapon: string) => {
-        console.log('Validado: ', weapon)
-        weaponUserSet(weapon);
+    const selectWeapon = (weapon: string[]) => {
+        if (gameState === gameStates.user) {
+            weaponUserSet(weapon);
+            gameStateSet(gameStates.enemy);
+        }
     }
+
+    const newTurn = () => {
+        if (gameState === gameStates.enemy) {
+            const value = Math.floor((Math.random() * 3) + 1);
+            var enemyWeapon: string[];
+            switch (value) {
+                case 1: enemyWeapon = weapon.paper;
+                    break;
+                case 2: enemyWeapon = weapon.rock;
+                    break;
+                case 3: enemyWeapon = weapon.scissors;
+                    break;
+            }
+            weaponEnemySet(enemyWeapon!)
+            battle(weaponUser, enemyWeapon!);
+
+        } else if (gameState === gameStates.user) {
+            battleResultSet('Bora lá, é sua vez de jogar!');
+            weaponEnemySet([]);
+        }
+    }
+
+    const battle = (_weaponUser: string[], _weaponEnemy: string[]) => {
+        if (_weaponUser === _weaponEnemy) {
+            battleResultSet('Empate!')
+        } else if (_weaponUser === weapon.paper) {
+            console.log('paper!');
+            if (rules.paperWins.includes(_weaponEnemy)) {
+                battleResultSet('Jogador venceu!')
+            } else {
+                battleResultSet('Jogador derrotado!');
+            }
+        } else if (_weaponUser === weapon.rock) {
+            if (rules.rockWins.includes(_weaponEnemy)) {
+                battleResultSet('Jogador venceu!')
+            } else {
+                battleResultSet('Jogador derrotado!');
+            }
+        } else if (_weaponUser === weapon.scissors) {
+            if (rules.scissorsWins.includes(_weaponEnemy)) {
+                battleResultSet('Jogador venceu!')
+            } else {
+                battleResultSet('Jogador derrotado!');
+            }
+        }
+        gameStateSet(gameStates.result);
+    }
+
+    const windowMode = () => {
+        if (gameState === gameStates.user) {
+            return (
+                <>
+                    <Text>{battleResult}</Text>
+                    <Table>
+                        <Weapon img={weapon.rock[0]} onClick={() => { selectWeapon(weapon.rock) }} />
+                        <Weapon img={weapon.paper[0]} onClick={() => { selectWeapon(weapon.paper) }} />
+                        <Weapon img={weapon.scissors[0]} onClick={() => { selectWeapon(weapon.scissors) }} />
+                    </Table>
+                </>
+            );
+        } else if (gameState === gameStates.result) {
+            return (
+                <>
+                    <Text>{battleResult}</Text>
+                    <Table>
+                        <RotatedContainer angle="90deg">
+                            <Weapon img={weaponUser[0]} onClick={() => { }} />
+                        </RotatedContainer>
+                        <AnimatedDivisor></AnimatedDivisor>
+                        <RotatedContainer angle="-90deg">
+                            <Weapon img={weaponEnemy[1]} onClick={() => { }} />
+                        </RotatedContainer>
+                    </Table>
+                    <Button onClick={() => { gameStateSet(gameStates.user) }}>Jogar novamente</Button>
+                </>
+            );
+        }
+    }
+
+    useEffect(() => {
+        newTurn();
+    }, [gameState]);
 
     return (
         <Container>
@@ -50,17 +110,7 @@ export const Home = () => {
                 <SubTitle>É hora do duelo!</SubTitle>
             </header>
             <body>
-                {weaponUser}
-                <Text>Bora lá, é sua vez de jogar!</Text>
-                <Table>
-                    <Weapon img={weapon.rock} onClick={() => { validar('rock') }} />
-                    <Weapon img={weapon.paper} onClick={() => { validar('paper') }} />
-                    <Weapon img={weapon.scissors} onClick={() => { validar('scissors') }} />
-                    {/* <Weapon img={weapon.rock} onClick={() => { selectWeapon(weaponSelected.rock) }} />
-                    <Weapon img={weapon.paper} onClick={() => { selectWeapon(weaponSelected.paper) }} />
-                    <Weapon img={weapon.scissors} onClick={() => { selectWeapon(weaponSelected.scissors) }} /> */}
-
-                </Table>
+                {windowMode()}
             </body>
         </Container>
     );

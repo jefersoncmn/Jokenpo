@@ -6,12 +6,9 @@ import papelAmarelo from './papel-amarelo.svg';
 import tesouraAmarelo from './tesoura-amarelo.svg';
 
 const weapon = {
-    rock: pedra,
-    paper: papel,
-    scissors: tesoura,
-    rockEnemy: pedraAmarelo,
-    paperEnemy: papelAmarelo,
-    scissorsEnemy: tesouraAmarelo,
+    rock: [pedra, pedraAmarelo],
+    paper: [papel, papelAmarelo],
+    scissors: [tesoura, tesouraAmarelo]
 }
 
 export default weapon;
