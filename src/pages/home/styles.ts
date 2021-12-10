@@ -81,7 +81,9 @@ export const Weapon = style.button<IWeapon>`
     background-image: url(${props => props.img});
     background-repeat: no-repeat;
     background-position: center;
+    background-color: transparent;
     margin: 10px;
+    border: none;
 `
 
 export const Button = style.button`
