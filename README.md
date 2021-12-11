@@ -14,6 +14,12 @@ Tabela de conteúdos
 
 Esse projeto é um site que contém um minigame do jokenpô, feito com React. Realizado no ano de 2021.
 
+<img src="./github/player_turn.JPG" align="center"/>
+<p align="center">Turno do jogador</p>
+<br>
+<img src="./github/result_turn.JPG"  align="center"/>
+<p align="center">Resultado</p>
+
 ### Estudo
 
 No projeto será estudado:
