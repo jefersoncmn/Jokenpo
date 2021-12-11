@@ -2,6 +2,7 @@ import { Container, Title, SubTitle, Table, Weapon, Text, RotatedContainer, Butt
 import weapon from '../../assets/weapon/weapon';
 import { useEffect, useState } from 'react';
 import { gameStates } from '../../models/gameStates';
+import { gameResults } from '../../models/gameResults';
 import { rules } from '../../models/weaponSelected';
 
 export const Home = () => {
@@ -44,25 +45,24 @@ export const Home = () => {
 
     const battle = (_weaponUser: string[], _weaponEnemy: string[]) => {
         if (_weaponUser === _weaponEnemy) {
-            battleResultSet('Empate!')
+            battleResultSet(gameResults.draw)
         } else if (_weaponUser === weapon.paper) {
-            console.log('paper!');
             if (rules.paperWins.includes(_weaponEnemy)) {
-                battleResultSet('Jogador venceu!')
+                battleResultSet(gameResults.victory);
             } else {
-                battleResultSet('Jogador derrotado!');
+                battleResultSet(gameResults.defeat);
             }
         } else if (_weaponUser === weapon.rock) {
             if (rules.rockWins.includes(_weaponEnemy)) {
-                battleResultSet('Jogador venceu!')
+                battleResultSet(gameResults.victory);
             } else {
-                battleResultSet('Jogador derrotado!');
+                battleResultSet(gameResults.defeat);
             }
         } else if (_weaponUser === weapon.scissors) {
             if (rules.scissorsWins.includes(_weaponEnemy)) {
-                battleResultSet('Jogador venceu!')
+                battleResultSet(gameResults.victory);
             } else {
-                battleResultSet('Jogador derrotado!');
+                battleResultSet(gameResults.defeat);
             }
         }
         gameStateSet(gameStates.result);

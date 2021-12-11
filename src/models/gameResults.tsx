@@ -1,5 +1,5 @@
 export enum gameResults {
-    victory,
-    defeat,
-    draw
+    victory = 'Jogador venceu!',
+    defeat = 'Jogador derrotado!',
+    draw = 'Empate!',
 }
