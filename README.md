@@ -17,7 +17,8 @@ Esse projeto é um site que contém um minigame do jokenpô, feito com React. Re
 ### Estudo
 
 No projeto será estudado:
-- Typescript
+- JavaScript
+- TypeScript
 - Reactjs
   - Estados
   - Uso da biblioteca Styled Components
