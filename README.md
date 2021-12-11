@@ -12,7 +12,7 @@ Tabela de conteúdos
 
 ### Sobre
 
-Esse é um site que contém um minigame do jokenpô, feito com React. Realizado no ano de 2021.
+Esse projeto é um site que contém um minigame do jokenpô, feito com React. Realizado no ano de 2021.
 
 ### Estudo
 
