@@ -17,6 +17,7 @@ export const Title = style.h1`
     color: ${colors.primary}
     font-weight: 900;
     font-size: 64px;
+    text-align: center;
 `;
 
 export const SubTitle = style.h3`
